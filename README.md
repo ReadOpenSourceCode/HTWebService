@@ -21,7 +21,7 @@ HTWebService 是一套基于 AFNetworking 3.x 的网络层封装，通过分离�
 - [x] 分离业务状态和请求状态
 - [x] 运用轻量级泛型提供返回对象的类型检查
 - [x] Request & Response JSON 日志
-- [ ] Response 内存数据 JSON 转 Model
+- [ ] Response 内层数据 JSON 转 Model
 
 ## 通过 CocoaPods 安装
 
