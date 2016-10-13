@@ -12,14 +12,13 @@
 
 - (void)fetchJokeList
 {
-    [self.webService requestEasilyWithMethod:HTHTTPMethodGET
-                                        path:@"api/4/section/2"
-                                  parameters:nil
-                             businessSuccess:^(PSResponse * _Nonnull response) {
-                                 // 做业务成功之后想做的事情
-                             } finally:^{
-                                 // 做网络请求结束之后想做的事情
-                             }];
+    [self.webService getEasilyWithPath:@"api/4/section/2"
+                            parameters:nil
+                       businessSuccess:^(PSResponse * _Nonnull response) {
+                           // 做业务成功之后想做的事情
+                       } finally:^{
+                           // 做网络请求结束之后想做的事情
+                       }];
 }
 
 @end

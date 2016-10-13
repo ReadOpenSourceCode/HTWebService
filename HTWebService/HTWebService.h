@@ -79,12 +79,31 @@ typedef void (^HTAlwaysExecuteBlock)();
 
 #pragma mark - Core Method
 
+/**
+ * 简化请求，出错后框架会自动处理。
+ *  @param method             HTTP Method
+ *  @param subPath            API地址
+ *  @param parameters         参数
+ *  @param bizSuccessBlock    业务成功执行此block  NONULL
+ *  @param bizFailureBlock    业务失败执行此block
+ *  @param reqFailureBlock    请求失败执行此block
+ *  @param alwaysExecuteBlock 如果非nil 则不论请求成功或者失败，都会执行
+ */
 - (void)requestEasilyWithMethod:(HTHTTPMethod)method
                            path:(nonnull NSString *)subPath
                      parameters:(nullable id)parameters
                 businessSuccess:(nonnull HTBusinessSuccessBlock)bizSuccessBlock
                         finally:(nullable HTAlwaysExecuteBlock)alwaysExecuteBlock;
 
+
+/**
+ *  静默请求，出错后框架会吞掉错误。
+ *  @param method             HTTP Method
+ *  @param subPath            API地址
+ *  @param parameters         参数
+ *  @param bizSuccessBlock    业务成功执行此block  NONULL
+ *  @param alwaysExecuteBlock 如果非nil 则不论请求成功或者失败，都会执行
+ */
 - (void)requestSilentlyWithMethod:(HTHTTPMethod)method
                              path:(nonnull NSString *)subPath
                        parameters:(nullable id)parameters
@@ -92,7 +111,7 @@ typedef void (^HTAlwaysExecuteBlock)();
                           finally:(nullable HTAlwaysExecuteBlock)alwaysExecuteBlock;
 
 /**
- *  自行选择 HTTP Method 进行请求
+ *  完整的请求，框架不会统一处理错误。
  *  @param method             HTTP Method
  *  @param subPath            API地址
  *  @param parameters         参数
@@ -109,9 +128,8 @@ typedef void (^HTAlwaysExecuteBlock)();
                requestFailure:(nullable HTRequestFailureBlock)reqFailureBlock
                       finally:(nullable HTAlwaysExecuteBlock)alwaysExecuteBlock;
 
-@end
 
-@interface HTWebService (Convience)
+#pragma mark - Convience Call Method
 
 /**
  *  简化版GET请求，只处理业务成功的状态。其他状态默认展现一下提示窗口。

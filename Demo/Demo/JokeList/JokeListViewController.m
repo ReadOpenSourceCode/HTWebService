@@ -7,31 +7,47 @@
 //
 
 #import "JokeListViewController.h"
+#import "PSJokeListModel.h"
 
 @interface JokeListViewController ()
+
+@property (nonatomic, strong) PSJokeListModel *model;
+
 
 @end
 
 @implementation JokeListViewController
 
-- (void)viewDidLoad {
+#pragma mark - Public
+
+#pragma mark - Life cycle
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.model fetchJokeList];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - IBAction
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark - Delegate
+
+
+#pragma mark - Private Method
+
+
+#pragma mark - Getter and Setter
+
+- (PSJokeListModel *)model
+{
+    if (!_model)
+    {
+        _model = [[PSJokeListModel alloc] init];
+    }
+    return _model;
 }
-*/
 
 @end
