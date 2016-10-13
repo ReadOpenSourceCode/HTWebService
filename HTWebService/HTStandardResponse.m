@@ -25,11 +25,6 @@ NSNotificationName const HTStandardResponseTokenOverdueNofitification = @"HTStan
     return self;
 }
 
-- (Class)responseClass;
-{
-    return self.class;
-}
-
 - (BOOL)isBusinessSuccess;
 {
     return self.code == HTResponseCodeSuccess;
