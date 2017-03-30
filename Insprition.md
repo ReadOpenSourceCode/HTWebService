@@ -136,10 +136,6 @@ if ([JSON isKindOfClass:[NSDictionary class]]) {
 
 至此，基本上 `HTWebService` 的骨架就出来了。之后就是不断完善类似于**添加 Nullability 来兼容 Swift** ，**使用轻量泛型使返回值不需要每次都强转** 等小细节，然后才有了现在大家所见到的样子。
 
-### 小插曲
-
-在 HTWebService 被整合进标准化框架，框架演进至 1.3.1 版本时，被同事**修改了文件名并将全套框架[开源](https://github.com/mushank/ZKStandard)**。可以看到 Plist 文件还存在，因此用 Pod 导入更新版本时会导致 plist 被修改的问题还没有解决。也是让人哭笑不得的😂。
-
 ### 致谢
 
 [@Leon](https://github.com/leonhoo)是我实习期间的 Mentor , 是一位十多年工作经验的**真全栈**。他在我实习成长过程中给了许多帮助。在平时的交流中，他也时常令我有醍醐灌顶之感，是一位难得的良师益友。
